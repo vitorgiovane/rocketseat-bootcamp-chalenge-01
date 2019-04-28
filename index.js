@@ -28,4 +28,9 @@ app.get('/minor', (req, res) => {
 	return res.render('minor', { age })
 })
 
+app.get('/major', (req, res) => {
+	const age = req.query.age
+	return res.render('major', { age })
+})
+
 app.listen(3000)
