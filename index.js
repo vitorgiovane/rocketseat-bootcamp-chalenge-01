@@ -23,12 +23,19 @@ app.post("/check", (req, res) => {
 	return res.redirect(`/major?age=${req.body.age}`)
 })
 
-app.get('/minor', (req, res) => {
+const checkFill = (req, res, next) => {
+	if(!req.query.age) {
+		return res.redirect('/')
+	}
+	return next()
+}
+
+app.get('/minor', checkFill, (req, res) => {
 	const age = req.query.age
 	return res.render('minor', { age })
 })
 
-app.get('/major', (req, res) => {
+app.get('/major', checkFill, (req, res) => {
 	const age = req.query.age
 	return res.render('major', { age })
 })
