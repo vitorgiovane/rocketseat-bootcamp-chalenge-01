@@ -16,4 +16,11 @@ app.get("/", (req, res) => {
 	return res.render("age")
 })
 
+app.post("/check", (req, res) => {
+	if(parseInt(req.body.age) < 18) {
+		return res.redirect(`/minor?age=${req.body.age}`)
+	}
+	return res.redirect(`/major?age=${req.body.age}`)
+})
+
 app.listen(3000)
