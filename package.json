@@ -5,7 +5,11 @@
   "repository": "git@github.com:vitorgiovane/rocketseat-bootcamp-challenge-01.git",
   "author": "Vitor <vitorgpalves@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "devDependencies": {
-    "eslint": "^5.16.0"
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.11"
   }
 }
